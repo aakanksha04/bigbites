@@ -1,0 +1,59 @@
+{% extends 'canteen/index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-element">
+            <a class="btn btn-outline-dark" href="../admin/logout"> &#x2190 Logout</a>
+            <br>
+            <br>
+            <h1 style="text-align: center;">ADMIN PANEL</h1>
+            <!-- <table class="table">
+                <tr>
+                    <th><h5>Orders: <strong>{{orders.get_cart_items}}</strong></h5></th>
+                    <br><th><h5>Total Revenue: <strong>&#x20B9 {{orders.get_cart_total}}</strong></h5></th>
+                    <th>
+                        <a style="float: right; margin: 5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+                    </th>
+                </tr>
+            </table> -->
+        </div>
+
+        <br>
+        {% if orders.get_cart_items == 0 %}
+            <div class="box-element"style="text-align: center">
+                <h3>No Orders</h3>
+            </div>
+         
+        {% else %}
+        <div class="box-element">
+            <div class="cart-row">
+                <div style="flex: 1;"></div>
+                <div style="flex: 2;"><strong>Customer Name</strong> </div>
+                <div style="flex: 2;"><strong>Date</strong></div>
+                <div style="flex: 2;"><strong>Transaction ID</strong></div>
+                <div style="flex: 2;"><strong>Order Status</strong></div>
+            </div>
+            
+            {% for order in orders %}
+            <div class="cart-row">
+                <div style="flex: 1;"><img src="{{item.product.imageURL}}" class="row-image"></div>
+                <div style="flex: 2;">{{order.customer}}</div>
+                <div style="flex: 2;">{{order.date_ordered}}</div>
+                <div style="flex: 2;">{{order.transaction_id}}</div>
+                {% if order.complete == True %}
+                    <div style="flex: 2;">Complete</div>
+                {% else %}
+                    <div style="flex: 2;">Pending</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+
+
+{% endblock content %}
