@@ -1,1 +1,1 @@
-web: uvicorn CCMS.wsgi --log-file 
+web: gunicorn bigbites.wsgi --log-file 
