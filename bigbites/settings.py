@@ -26,7 +26,7 @@ SECRET_KEY = '3@74hke8vqjn_(8w-51h^c@+t8bgti=lz(+dpvh65m(@!(q9*_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','https://bigbites-ak.herokuapp.com/']
 
 
 # Application definition
