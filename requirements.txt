@@ -50,7 +50,6 @@ pycparser==2.20
 pyjsparser==2.7.1
 PyJWT==2.1.0
 pylint==2.6.0
-pyodbc==4.0.30
 pyOpenSSL==20.0.1
 pyparsing==2.4.7
 python3-openid==3.2.0
@@ -66,7 +65,6 @@ social-auth-app-django==4.0.0
 social-auth-core==4.1.0
 sqlparse==0.3.1
 toml==0.10.1
-twisted-iocpsupport==1.0.1
 Twisted==21.2.0
 txaio==21.2.1
 tzlocal==2.1
